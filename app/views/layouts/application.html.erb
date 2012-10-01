@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<title><%= FIFA::Application.config.app_name  %></title> 
+	<link rel="apple-touch-icon-precomposed" href="<%= FIFA::Application.config.app_icon_src %>"/>
+	<link rel="apple-touch-icon" href="<%= FIFA::Application.config.app_icon_src %>"/>    
+	<link rel="apple-touch-startup-image" href="<%= FIFA::Application.config.app_icon_src %>" /> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />  
+	<meta name="apple-mobile-web-app-status-bar-style" content="default" />  
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<script src="/ui/js/jquery-1.6.4.min.js"></script>
+	<script src="/ui/js/jquery.mobile-1.0.min.js"></script>
+	<script src="/ui/js/teams.js"></script>
+	<script src="/ui/js/jqm_helper.js"></script>
+	<script src="/ui/js/general.js"></script>
+	
+	<script language="javascript" type="text/javascript" src="/ui/flot/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="/ui/flot/jquery.flot.pie.js"></script>
+  <script language="javascript" type="text/javascript" src="/ui/flot/jquery.flot.resize.js"></script>
+	
+	<link rel="stylesheet" href="/ui/css/main.css" />
+	
+	<%= yield :header %>
+
+</head> 
+<body style="background:#fff"> 
+<% if content_for?(:body_full) %>
+<%= yield :body_full %>
+<% else %>
+<div data-role="page" class="type-index" style="background:#fff">
+<a href="#" id="top"></a>
+	<%= yield :body %>
+
+</div>
+<% end %>
+
+</body>
+</html>
+

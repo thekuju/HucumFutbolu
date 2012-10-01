@@ -1,0 +1,37 @@
+<div data-role="content">
+<script>
+
+$(function () {
+
+    var d = 
+    [
+    <% @historic_ranking_by_day.each_with_index do |log, index| %>
+	[<%= log.created_at.to_i * 1000%>, <%= log.score %>]
+	<% if(index != (@historic_ranking_by_day.length-1)) %>, <% end%>
+    <% end %>
+    ];
+
+     $.plot($("#placeholder"), [d], { colors: ["#417daa"], xaxis: { mode: "time" },
+		  grid: {
+		      color: '#000',      // => primary color used for outline and labels
+		      backgroundColor: '#fff', // => null for transparent, else color
+		      tickColor: '#DDDDDD',  // => color used for the ticks
+		      labelMargin: 3,        // => margin in pixels
+		      verticalLines: true,   // => whether to show gridlines in vertical direction
+		      horizontalLines: true, // => whether to show gridlines in horizontal direction
+		      outlineWidth: 0        // => width of the grid outline/border in pixels
+		    } ,
+		    lines: { show: true },
+		          points: { show: true }
+    
+    });
+    
+
+
+});
+</script>
+
+<div id="placeholder" style="width:280px;height:200px;"></div>
+	<br />
+	<br />
+</div>

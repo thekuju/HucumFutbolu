@@ -1,0 +1,37 @@
+<div data-role="content">
+		
+	
+		<script>
+
+
+		$(function () {
+    var d = [[-373597200000, 1000], [-370918800000, 1200], [-368326800000, 1220], [-363056400000, 800], [-360378000000, 780], [-357699600000, 700]]; 
+
+    $.plot($("#placeholder"), [d], { colors: ["#3E94F7"], xaxis: { mode: "time" },
+    grid: {
+        color: '#000',      // => primary color used for outline and labels
+        backgroundColor: null, // => null for transparent, else color
+        tickColor: '#DDDDDD',  // => color used for the ticks
+        labelMargin: 3,        // => margin in pixels
+        verticalLines: true,   // => whether to show gridlines in vertical direction
+        horizontalLines: true, // => whether to show gridlines in horizontal direction
+        outlineWidth: 1        // => width of the grid outline/border in pixels
+      } ,
+      lines: { show: true },
+            points: { show: true }
+    
+    });
+    
+    //$("#placeholder").resize();
+
+
+});
+
+	
+
+		</script>
+	
+	<div id="placeholder" style="width:100%;height:300px;"></div>
+		<br />
+		<br />
+	</div>

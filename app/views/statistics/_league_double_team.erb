@@ -1,0 +1,35 @@
+<ul data-role="listview" class="ui-listview">
+	<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-d">
+	Team standings
+	</li>
+</ul>
+<br />
+
+<table style="width:100%" id="result-table">
+	<thead>
+		<tr>
+		<th style="text-align:left">Team</th>
+		<th>P</th>
+		<th>W</th>
+		<th>L</th>
+		<th>D</th>
+		<th>PPG</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @teams.select{|t| t.players.length > 1}.each do |team| %>
+		<tr>
+		<td style="text-align:left"><%= team.display_name %></td>
+		<td><%= team.matches.length %></td>
+		<td class="green"><%= team.wins %></td>
+		<td class="red"><%= team.losses %></td>
+		<td><%= team.draws %></td>
+		<td class="blue"><%= team.points_per_game.to_f %></td>
+		</tr>
+		<% end %>
+	</tbody>
+	<tfooter>
+	</tfooter>
+</table>
+
+
